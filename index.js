@@ -44,4 +44,28 @@ const bookStore = {
 }
 
 // Write your code here!
+// Select Title Element
+const bookStoreTitle = document.querySelector("#header")
+const bookList = document.querySelector("#book-list")
+//Change the element to match the bookstore name
+bookStoreTitle.textContent = bookStore.name 
+//Loop through every book element
+bookStore.books.forEach(book => {
+    //Create elements for each book
+    const bookContainer = document.createElement("li")
+    const bookTitle = document.createElement("h3")
+    const bookAuthor = document.createElement("p")
+    const bookImage = document.createElement("img")
+//Change the textContent of each element to match the book object
+bookTitle.textContent = book.title
+bookAuthor.textContent = book.author
+bookImage.src = book.imageUrl
+//Append book elements to bookList
+bookContainer.append(bookTitle, bookAuthor,bookImage)
+bookList.append(bookContainer)
+})
+//Bonus: Delete Element
+const element = document.querySelector("#delete-this")
 
+element.remove()
+cons
